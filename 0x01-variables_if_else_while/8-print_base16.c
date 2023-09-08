@@ -9,7 +9,7 @@ int main(void)
 int digit = 48;
 while (digit <= 102)
 {
-putchart(digit);
+putchar(digit);
 if (digit == 57)
 digit += 39;
 digit++;
