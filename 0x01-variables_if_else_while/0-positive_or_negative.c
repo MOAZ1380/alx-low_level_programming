@@ -1,9 +1,12 @@
 #include<stdio.h>
 #include<time.h>
 /**
- * more headers goes there
+ * main -entry point
  *
- * betty style doc for function main goes there
+ * Description: positive or negative
+ *
+ * Return : 0 (Success)
+ *
 */
 int main(void)
 {
