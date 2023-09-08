@@ -6,9 +6,12 @@
 */
 int main(void)
 {
-	int M = 0;
-for (M = 0 ; M < 10 ; M++)
-putchar('M');
-putchar('\n');
+	int digit = 0;
+while (digit <= 9)
+{
+putchar('digit + '0');
+digit++;
+}
+putchar('\n')
 return (0);
 }
