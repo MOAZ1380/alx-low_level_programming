@@ -1,16 +1,19 @@
 #include<stdio.h>
 #include<time.h>
+#include<stdlib.h>
 /**
  * main -entry point
  *
  * Description: positive or negative
  *
- * Return : 0 (Success)
- *
+ * Return: Always 0 (Success)
 */
 int main(void)
 {
 int n;
+
+srand(time(0));
+n = rand() - RAND_MAX / 2;
 
 if (n < 0)
 {
@@ -24,5 +27,5 @@ else
 {
 printf("%d is zero", n);
 }
-return (0);
+	return (0);
 }
