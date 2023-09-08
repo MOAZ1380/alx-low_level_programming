@@ -1,4 +1,11 @@
 #include<stdio.h>
+/**
+ * main - Entry point
+ *
+ * Description: A C progam that prints with ptintf function.
+ *
+ * Return: Always 0 (Success)
+*/
 
 int main(void)
 {
