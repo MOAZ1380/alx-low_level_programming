@@ -5,12 +5,12 @@
 */
 void print_alphabet(void)
 {
-	int c;
+	char c;
 
 	for (c = 'a'; c <= 'z'; c++)
 
 	{
-		printf("%d", c);
+		printf("%c", c);
 
 		printf("\n");
 	}
