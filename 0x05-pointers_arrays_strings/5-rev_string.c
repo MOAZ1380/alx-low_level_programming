@@ -12,6 +12,7 @@ void rev_string(char *s)
 	char temp;
 	/*find stringfdsjkdkj fdskjfksdj*/
 		for (l = 0; s[l] != '\0'; ++l)
+			;
 			/*swap string flsdklfdsjfdslkfkds char*/
 		for (i = 0; i < l / 2; i++)
 	{
