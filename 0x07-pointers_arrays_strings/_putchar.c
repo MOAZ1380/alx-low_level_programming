@@ -1,5 +1,5 @@
 #include"main.h"
-#include<unistd>
+#include<unistd.h>
 /**
  * _putchar - moaz
  * @c: moa
@@ -8,5 +8,5 @@
 */
 int _putchar(char c)
 {
-	return (write(1, &c, 1))
+	return (write(1, &c, 1));
 }
