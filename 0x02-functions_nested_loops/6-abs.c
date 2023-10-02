@@ -1,9 +1,9 @@
 #include"main.h"
 #include<stdio.h>
 /**
- * _abs- function that computes
+  _abs - function that computes
  *
- * @n: takes in integer type input for function
+ * @c: takes in integer type input for function
  *
  * Return: 0 Always
 */
