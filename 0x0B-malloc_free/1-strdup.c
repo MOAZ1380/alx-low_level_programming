@@ -12,6 +12,10 @@ char *_strdup(char *str)
 		return (NULL);
 
 	strcpy(i, str);
+
+
+	if (i == NULL)
+		return (NULL);
+
 	return (i);
-	free(i);
 }
