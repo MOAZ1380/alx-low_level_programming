@@ -2,9 +2,9 @@
 /**
  * init_dog- mo
  * @d: m
- * @age: m
  * @name: m
- * #owner: m
+ * @age: m
+ * @owner: m
  * Return: n
 */
 void init_dog(struct dog *d, char *name, float age, char *owner)
