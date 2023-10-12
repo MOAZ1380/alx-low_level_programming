@@ -5,6 +5,16 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+/**
+ * struct token - m
+ * @token: ,
+ * @f: mo
+*/
+typedef struct token
+{
+	char *token;
+	void (*f)(char *, va_list);
+} token_t;
 
 int _putchar(char c);
 int sum_them_all(const unsigned int n, ...);
