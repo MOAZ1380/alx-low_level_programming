@@ -1,57 +1,51 @@
 #include "variadic_functions.h"
-/***/
-void format_char(char *separator, va_list ap)
-{
-	printf("%s%c", separator, va_arg(ap, int));
-}
-/***/
-void format_int(char *separator, va_arg(ap, int));
-{
-	prinnf("%s%d", separator, va_arg(ap, int));
-}
-/***/
-void format_float(char *separator, va_list ap)
-{
-	printf("%s%f", separator, va_arg(ap, double));
-}
-/***/
-void format_string(char *separator, va_list ap)
-{
-	char *str = va_arg(ap, char *);
-	switch ((int)(!str))
-		case 1;
-			str = "(nil)";
-	printf("%s%s", separator, str);
-}
-/***/
+#include <stdarg.h>
+#include <stdio.h>
+
+/**
+ * print_all - prints anything
+ * @format: list of types of arguments passed to the function
+ */
 void print_all(const char * const format, ...)
 {
-	| int i = 0, j;
-	char *separator = "";
-	va_list ap;
-	token_t tokens[] = 
+	int i = 0;
+	char *str, *sep = "";
+
+	va_list list;
+
+	va_start(list, format);
+
+	if (format)
 	{
-		{"c", format_char},
-		{"i", format_int},
-		{"f", format_float},
-		{"s", format_string},
-		{NULL, NULL}
-	};
-	va_start(ap, format);
-	| while (format && format[i])
-	{
-		j = 0;
-		while (token [j].token)
+		while (format[i])
 		{
-			if (format[i] == token[j].token[0])
+			switch (format[i])
 			{
-				tokens[j].f(separator, ap);
-				separator = ", ";
+				case 'c':
+					printf("%s%c", sep, va_arg(list, int));
+					break;
+				case 'i':
+					printf("%s%d", sep, va_arg(list, int));
+					break;
+				case 'f':
+					printf("%s%f", sep, va_arg(list, double));
+					break;
+				case 's':
+					str = va_arg(list, char *);
+					if (!str)
+						str = "(nil)";
+					printf("%s%s", sep, str);
+					break;
+				default:
+					i++;
+					continue;
 			}
-			j++;
+			sep = ", ";
+			i++;
 		}
-	|	i++;
 	}
+
 	printf("\n");
-	va_end(ap);
+	va_end(list);
 }
+
