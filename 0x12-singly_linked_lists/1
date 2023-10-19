@@ -1,0 +1,16 @@
+#include <stdio.h>
+#include "main.h"
+/***/
+size_t print_list(const list_t *h)
+{
+	size_t nodes = 0;
+
+	for (h; h != NULL; h = h->next)
+	{
+			printf("[%i] %s\n", h->len, h->str);
+			nodes++;
+	}
+	if (h->str == NULL)
+			printf("[0] (nil)\n");
+	return (nodes);
+}
