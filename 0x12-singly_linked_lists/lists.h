@@ -1,5 +1,5 @@
-#ifndef MAIN_H
-#define MAIN_H
+#ifndef LISTS_H
+#define LISTS_H
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -29,4 +29,4 @@ void free_list(list_t *head);
 
 
 
-#endif /* MAIN_H */
+#endif /* LISTS_H */
