@@ -3,7 +3,7 @@
 int _sqrt(int n, int i);
 
 /**
- * _sqrt - moaz
+ * _sqrt_recursion - moaz
  * @n: mo
  * Return: moaz
 */
@@ -29,5 +29,5 @@ int _sqrt(int n, int i)
 	if (sqrt == n)
 		return (i);
 
-	return(_sqrt(n, i + 1));
+	return (_sqrt(n, i + 1));
 }
