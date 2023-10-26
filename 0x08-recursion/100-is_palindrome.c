@@ -1,14 +1,19 @@
 #include "main.h"
 #include <string.h>
+/**
+ * _lenght - checks the length of a string
+ * @s: is the string
+ * Return: return the leng of the string
+*/
 int _lenght(char *s)
 {
- return (strlen(s));
+	return (strlen(s));
 }
 
 /**
  * checkp - checks if the string is palindrome
  * @i: is the index
- * @lg: is the length of the string
+ * @lenght: is the length of the string
  * @s: is the string
  * Return: 1 if is polindrome or 0 if not
 **/
