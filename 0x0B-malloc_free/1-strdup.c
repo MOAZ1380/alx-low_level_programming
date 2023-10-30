@@ -18,9 +18,6 @@ char *_strdup(char *str)
 	{
 		return (NULL);
 	}
-	for (int c = 0; c < strlen(str); c++)
-	{
-	    i[c] = str[c];
-	}
+	strcpy(i, str);
 	return (i);
 }
