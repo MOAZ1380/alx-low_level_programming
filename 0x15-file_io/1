@@ -1,0 +1,45 @@
+#include <stdlib.h>
+#include <unistd.h>
+#include <fcntl.h>
+
+ssize_t read_textfile(const char *filename, size_t letters) {
+    // Check if filename is NULL
+    if (filename == NULL)
+        return 0;
+
+    int fd = open(filename, O_RDONLY); // Open the file for reading
+    if (fd == -1) {
+        // Failed to open the file
+        return 0;
+    }
+
+    char *buffer = (char *)malloc(letters + 1); // Allocate memory for the buffer (+1 for null terminator)
+    if (buffer == NULL) {
+        // Memory allocation failed
+        close(fd);
+        exit(EXIT_FAILURE);
+    }
+
+    ssize_t bytes_read = read(fd, buffer, letters); // Read from the file
+    if (bytes_read == -1) {
+        // Failed to read from the file
+        free(buffer);
+        close(fd);
+        return 0;
+    }
+
+    // Null-terminate the buffer to treat it as a string
+    buffer[bytes_read] = '\0';
+
+    ssize_t bytes_written = write(STDOUT_FILENO, buffer, bytes_read); // Write to standard output
+    if (bytes_written == -1 || bytes_written != bytes_read) {
+        // Failed to write to standard output
+        free(buffer);
+        close(fd);
+        return 0;
+    }
+
+    free(buffer);
+    close(fd);
+    return bytes_written; // Return the number of bytes successfully written
+}
